@@ -1,0 +1,128 @@
+.featured-review {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  background: #111;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.featured-review__content {
+  flex: 1;
+  max-width: 520px;
+}
+
+.featured-review__label {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.featured-review h2 {
+  margin: 0;
+  font-size: 52px;
+  line-height: 1;
+}
+
+.featured-review__meta {
+  margin: 18px 0;
+  opacity: 0.55;
+}
+
+.featured-review__text {
+  color: #ccc;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+.featured-review__button {
+  margin-top: 25px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: white;
+  color: #111;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.featured-review__button:hover {
+  transform: scale(1.05);
+}
+
+.featured-review__visual {
+  flex: 0 0 360px;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.featured-review__poster {
+  width: 300px;
+  height: 430px;
+  border-radius: 18px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding: 30px;
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.1)
+    ),
+    linear-gradient(135deg, #182848, #4b6cb7);
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+
+  transform: rotateY(-8deg) scale(1);
+  transition: transform 0.5s ease;
+}
+
+.featured-review__poster:hover {
+  transform: rotateY(0deg) scale(1.04);
+}
+
+.featured-review__poster span {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 768px) {
+  .featured-review {
+    margin: 70px 20px;
+    padding: 40px 25px;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .featured-review__visual {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .featured-review__poster {
+    width: 240px;
+    height: 350px;
+  }
+
+  .featured-review h2 {
+    font-size: 40px;
+  }
+}

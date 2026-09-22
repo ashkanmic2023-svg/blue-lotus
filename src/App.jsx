@@ -2,8 +2,10 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import MovieCard from "./components/MovieCard";
 import SectionTitle from "./components/SectionTitle";
-
+import ReviewCard from "./components/ReviewCard";
 import { trendingMovies } from "./data/movies";
+import { reviews } from "./data/reviews";
+import FeaturedReview from './components/FeaturedReview'
 
 import "./App.css";
 
@@ -186,6 +188,48 @@ function App() {
           </div>
 
         </section>
+
+        <FeaturedReview />
+        
+        {/* Reviews */}
+
+          <section className="reviews-section" id="reviews">
+
+             <div className="section-header">
+
+            <div>
+              <span className="section-label">
+                EDITORIAL
+              </span>
+
+            <h2>نقد و بررسی</h2>
+
+            <p>
+               نگاه عمیق‌تر به فیلم‌ها، سریال‌ها و جهان داستان‌ها
+            </p>
+          </div>
+
+            <a href="#" className="view-all">
+               مشاهده همه    
+            <span>←</span>
+             </a>
+
+          </div>
+
+
+          <div className="reviews-grid">
+
+            {reviews.map((review) => (
+            <ReviewCard
+            key={review.id}
+            review={review}
+            />
+          ))}
+
+  </div>
+
+</section>
+
 
       </main>
 
