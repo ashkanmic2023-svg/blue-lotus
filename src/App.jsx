@@ -6,7 +6,9 @@ import ReviewCard from "./components/ReviewCard";
 import { trendingMovies } from "./data/movies";
 import { reviews } from "./data/reviews";
 import FeaturedReview from './components/FeaturedReview'
-
+import UserReviewCard from "./components/UserReviewCard";
+import { userReviews } from "./data/userReviews";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -229,9 +231,47 @@ function App() {
   </div>
 
 </section>
+      {/* User Reviews */}
+
+<section className="user-reviews-section" id="community">
+
+  <div className="section-header">
+
+    <div>
+      <span className="section-label">
+        COMMUNITY
+      </span>
+
+      <h2>صدای تماشاگران</h2>
+
+      <p>
+        هر داستان یک برداشت دارد؛ برداشت شما چیست؟
+      </p>
+    </div>
+
+    <button className="write-review-button">
+      + نوشتن نظر
+    </button>
+
+  </div>
+
+  <div className="user-reviews-grid">
+
+    {userReviews.map((review) => (
+      <UserReviewCard
+        key={review.id}
+        review={review}
+      />
+    ))}
+
+  </div>
+
+</section>
 
 
       </main>
+
+      <Footer />
 
     </div>
   );

@@ -1,5 +1,5 @@
 import blueLotusLogo from "../assets/blue-lotus-logo.png";
-
+import "./Header.css";
 function Header() {
   return (
     <header className="header">
@@ -14,8 +14,8 @@ function Header() {
           </span>
 
           <span className="logo-text">
-            <strong>نیلوفر آبی</strong>
-            <span>BLUE LOTUS</span>
+            <strong>BLUE LOTUS</strong>
+            <span>نیلوفرآبی</span>
           </span>
         </a>
 

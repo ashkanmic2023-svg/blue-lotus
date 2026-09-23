@@ -1,0 +1,226 @@
+/* ================================
+   User Review Card
+================================ */
+
+.user-review-card {
+  width: 100%;
+  max-width: none;
+  padding: 25px;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Hover */
+
+.user-review-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(255, 255, 255, 0.16);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ================================
+   User
+================================ */
+
+.user-review-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.user-avatar {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #6c63ff,
+    #9b8cff
+  );
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 20px rgba(108, 99, 255, 0.25);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-info strong {
+  color: #fff;
+  font-size: 15px;
+}
+
+.user-info span {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+
+
+/* ================================
+   Rating
+================================ */
+
+.user-review-rating {
+  margin-bottom: 12px;
+
+  color: #f5c451;
+
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.user-review-rating span {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ================================
+   Movie title
+================================ */
+
+.user-review-card h3 {
+  margin: 0 0 12px;
+
+  color: #fff;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+/* ================================
+   Review text
+================================ */
+
+.user-review-text {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+
+/* ================================
+   Footer
+================================ */
+
+.user-review-footer {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 22px;
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* Buttons */
+
+.user-review-footer button {
+  border: none;
+  outline: none;
+
+  padding: 7px 11px;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.user-review-footer button:hover {
+  background: rgba(255, 255, 255, 0.1);
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* Share button */
+
+.user-review-footer button:last-child {
+  margin-left: auto;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+}
+
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 768px) {
+
+  .user-review-card {
+    max-width: 100%;
+    padding: 22px;
+  }
+
+  .user-review-card h3 {
+    font-size: 20px;
+  }
+
+  .user-review-text {
+    font-size: 13px;
+  }
+
+}

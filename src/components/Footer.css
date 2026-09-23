@@ -1,0 +1,453 @@
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+  position: relative;
+
+  margin-top: 20px;
+
+  padding: 80px 7% 25px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(55, 181, 232, 0.07),
+      transparent 35%
+    ),
+    #030811;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =================================
+   FOOTER INNER
+================================= */
+
+.footer-inner {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.8fr
+    1fr
+    1fr
+    1.2fr;
+
+  gap: 60px;
+}
+
+
+/* =================================
+   COLUMNS
+================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  margin: 0 0 20px;
+
+  color: #e9f5fa;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =================================
+   LOGO
+================================= */
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.footer-logo-mark {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(11, 25, 41, 0.8);
+
+  border: 1px solid rgba(92, 207, 255, 0.16);
+
+  box-shadow:
+    0 0 25px rgba(51, 183, 239, 0.08);
+
+  font-size: 21px;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.footer-logo-text strong {
+  color: #65d2ff;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-logo-text span {
+  color: #60758b;
+
+  font-size: 9px;
+}
+
+
+/* =================================
+   ABOUT
+================================= */
+
+.footer-about p {
+  max-width: 360px;
+
+  color: #60758b;
+
+  font-size: 12px;
+
+  line-height: 2;
+
+  margin: 0;
+}
+
+
+/* =================================
+   LINKS
+================================= */
+
+.footer-column > a {
+  margin-bottom: 13px;
+
+  color: #64798b;
+
+  font-size: 11px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-column > a:hover {
+  color: #65d2ff;
+
+  transform: translateX(-3px);
+}
+
+
+/* =================================
+   SUPPORT
+================================= */
+
+.footer-support p {
+  margin: 0 0 18px;
+
+  color: #60758b;
+
+  font-size: 11px;
+
+  line-height: 1.9;
+}
+
+.footer-support-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 16px;
+
+  border-radius: 9px;
+
+  border: 1px solid rgba(92, 207, 255, 0.16);
+
+  background: rgba(92, 207, 255, 0.06);
+
+  color: #bdefff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-support-button span {
+  color: #5ccfff;
+  font-size: 15px;
+}
+
+.footer-support-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(92, 207, 255, 0.11);
+
+  border-color: rgba(92, 207, 255, 0.3);
+}
+
+
+/* =================================
+   BOTTOM
+================================= */
+
+.footer-bottom {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 65px auto 0;
+
+  padding-top: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  color: #435567;
+
+  font-size: 9px;
+}
+
+.footer-made {
+  color: #526879;
+}
+
+.footer-made b {
+  margin: 0 3px;
+
+  font-size: 11px;
+}
+
+.footer-made strong {
+  color: #6a8597;
+  font-weight: 500;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-legal a {
+  color: #435567;
+
+  transition: color 0.25s ease;
+}
+
+.footer-legal a:hover {
+  color: #65d2ff;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .footer-inner {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 45px;
+  }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .footer {
+    padding: 65px 7% 22px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+  }
+
+  .footer-about p {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 13px;
+  }
+
+}
+/* =================================
+   FOOTER CREDIT
+================================= */
+
+.footer-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  color: #60758b;
+  font-size: 10px;
+
+  direction: rtl;
+  white-space: nowrap;
+}
+
+.footer-credit-logo {
+  width: 19px;
+  height: 19px;
+
+  display: block;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 0 7px rgba(45, 224, 204, 0.28)
+    );
+
+  opacity: 0.9;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.footer-credit:hover .footer-credit-logo {
+  transform: scale(1.12);
+
+  filter:
+    drop-shadow(
+      0 0 10px rgba(45, 224, 204, 0.45)
+    );
+}
+
+
+/* =================================
+   FOOTER BOTTOM
+================================= */
+
+.footer-bottom {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.055);
+}
+
+
+/* =================================
+   LEGAL
+================================= */
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  direction: ltr;
+
+  font-size: 9px;
+}
+
+.footer-legal a {
+  color: #3f566d;
+
+  transition:
+    color 0.25s ease;
+}
+
+.footer-legal a:hover {
+  color: #65d2ff;
+}
+
+.footer-legal span {
+  color: #263a4c;
+}
+
+
+/* =================================
+   COPYRIGHT
+================================= */
+
+.footer-copy {
+  color: #3f566d;
+
+  font-size: 9px;
+
+  direction: ltr;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+
+  .footer-bottom {
+    flex-direction: column;
+
+    gap: 18px;
+
+    text-align: center;
+  }
+
+  .footer-credit {
+    order: -1;
+
+    white-space: normal;
+
+    line-height: 1.8;
+  }
+
+  .footer-credit-logo {
+    width: 21px;
+    height: 21px;
+  }
+
+}

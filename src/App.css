@@ -2007,3 +2007,164 @@ a {
   }
 
 }
+/* =================================
+   COMMUNITY
+================================= */
+
+.user-reviews-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 120px auto 0;
+  padding: 0 20px 120px;
+  box-sizing: border-box;
+}
+
+/* =================================
+   COMMUNITY HEADER
+================================= */
+
+.user-reviews-section .section-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 38px;
+  padding: 0;
+}
+
+.user-reviews-section .section-header > div {
+  text-align: right;
+}
+
+.user-reviews-section .section-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #6f9cff;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.user-reviews-section .section-header h2 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.user-reviews-section .section-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 13px;
+}
+
+/* =================================
+   WRITE REVIEW BUTTON
+================================= */
+
+.write-review-button {
+  flex-shrink: 0;
+
+  padding: 12px 20px;
+
+  border: 1px solid rgba(92, 207, 255, 0.16);
+  border-radius: 10px;
+
+  background: rgba(92, 207, 255, 0.06);
+
+  color: #dff7ff;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.write-review-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(92, 207, 255, 0.12);
+
+  border-color: rgba(92, 207, 255, 0.3);
+}
+
+/* =================================
+   USER REVIEWS GRID
+================================= */
+
+.user-reviews-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/* =================================
+   USER REVIEW CARD
+================================= */
+
+.user-reviews-grid .user-review-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 260px;
+  box-sizing: border-box;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .user-reviews-section {
+    padding: 0 25px 90px;
+  }
+
+  .user-reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 650px) {
+
+  .user-reviews-section {
+    margin-top: 80px;
+    padding: 0 20px 80px;
+  }
+
+  .user-reviews-section .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .user-reviews-section .section-header h2 {
+    font-size: 34px;
+  }
+
+  .write-review-button {
+    width: 100%;
+  }
+
+  .user-reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+}
