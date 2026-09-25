@@ -1,33 +1,177 @@
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  line-height: 1;
+/* =========================
+   SEARCH WRAPPER + SUGGESTIONS
+========================= */
+
+.search-wrapper {
+  position: relative;
 }
 
-.logo-text strong {
-  color: #65d2ff;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  direction: ltr;
-  line-height: 1.2;
-}
+.search-suggestions {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
 
-.logo-text span {
   width: 100%;
-  display: block;
+  min-width: 360px;
 
-  color: #79aabd;
-  font-size: 9px;
-  font-weight: 400;
+  max-height: 420px;
+  overflow-y: auto;
+
+  margin: 0;
+  padding: 8px;
+
+  list-style: none;
+
+  border-radius: 12px;
+
+  background: rgba(6, 13, 24, 0.97);
+  border: 1px solid rgba(92, 207, 255, 0.16);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+
+  z-index: 100;
 
   direction: rtl;
+
+  animation: searchSuggestionsFade 0.2s ease;
+}
+
+@keyframes searchSuggestionsFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-suggestions li {
+  margin: 0;
+  padding: 0;
+}
+
+.search-suggestions li a {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border-radius: 9px;
+
+  color: #ffffff;
+  font-size: 13px;
+
+  text-align: right;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease;
+}
+
+.search-suggestions li a:hover {
+  background: rgba(92, 207, 255, 0.08);
+}
+
+.search-suggestions__poster {
+  width: 40px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  border-radius: 6px;
+
+  object-fit: cover;
+
+  background: #0b1727;
+}
+
+.search-suggestions__info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+  flex: 1;
+}
+
+.search-suggestions__info strong {
+  color: #e9f8ff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-suggestions__info span {
+  color: #60758b;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-suggestions__kind {
+  flex-shrink: 0;
+
+  padding: 3px 8px;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.search-suggestions__kind--movie {
+  color: #79aabd;
+  background: rgba(121, 170, 189, 0.1);
+  border: 1px solid rgba(121, 170, 189, 0.2);
+}
+
+.search-suggestions__kind--series {
+  color: #d4b665;
+  background: rgba(200, 168, 78, 0.1);
+  border: 1px solid rgba(200, 168, 78, 0.22);
+}
+
+.search-suggestions__kind--anime {
+  color: #b09ae0;
+  background: rgba(155, 133, 215, 0.1);
+  border: 1px solid rgba(155, 133, 215, 0.22);
+}
+
+.search-suggestions__rating {
+  color: #79aabd;
+
+  font-size: 11px;
+
+  flex-shrink: 0;
+}
+
+.search-suggestions--empty {
+  padding: 18px 12px;
   text-align: center;
+}
 
-  line-height: 1.4;
-
-  transform: scaleX(1.45);
-  transform-origin: center;
+.search-suggestions--empty span {
+  color: #60758b;
+  font-size: 12px;
 }

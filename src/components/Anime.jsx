@@ -1,54 +1,13 @@
+import { Link } from "react-router-dom";
+import {
+  getFeaturedAnime,
+  getOtherAnime,
+} from "../data/anime";
 import "./Anime.css";
 
-const animeList = [
-  {
-    id: "attack-on-titan",
-    title: "Attack on Titan",
-    japaneseTitle: "進撃の巨人",
-    persianTitle: "حمله به تایتان",
-    year: "2013",
-    genre: "Action · Dark Fantasy",
-    rating: "9.1",
-    poster:
-      "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    id: "demon-slayer",
-    title: "Demon Slayer",
-    japaneseTitle: "鬼滅の刃",
-    persianTitle: "شیطان‌کش",
-    year: "2019",
-    genre: "Action · Fantasy",
-    rating: "8.6",
-    poster:
-      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    id: "jujutsu-kaisen",
-    title: "Jujutsu Kaisen",
-    japaneseTitle: "呪術廻戦",
-    persianTitle: "جوجوتسو کایسن",
-    year: "2020",
-    genre: "Action · Supernatural",
-    rating: "8.5",
-    poster:
-      "https://images.unsplash.com/photo-1614583224978-f8f9a4e4c4b3?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    id: "your-name",
-    title: "Your Name",
-    japaneseTitle: "君の名は。",
-    persianTitle: "نام تو",
-    year: "2016",
-    genre: "Romance · Fantasy",
-    rating: "8.4",
-    poster:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85",
-  },
-];
-
 function Anime() {
-  const featuredAnime = animeList[0];
+  const featuredAnime = getFeaturedAnime();
+  const otherAnime = getOtherAnime();
 
   return (
     <section className="anime-section" id="anime">
@@ -72,13 +31,13 @@ function Anime() {
           </h2>
         </div>
 
-        <a
-          href="/anime"
+        <Link
+          to="/anime"
           className="anime-section__all-link"
         >
           ورود به دنیای انیمه
           <span>←</span>
-        </a>
+        </Link>
 
       </div>
 
@@ -143,27 +102,25 @@ function Anime() {
           </div>
 
           <p className="anime-featured__description">
-            در دنیایی که انسان‌ها پشت دیوارهای عظیم زندگی می‌کنند،
-            حقیقت آرام‌آرام از دل ترس بیرون می‌آید. داستانی از آزادی،
-            بقا، دوستی و انتخاب‌هایی که هیچ بازگشتی از آن‌ها وجود ندارد.
+            {featuredAnime.description}
           </p>
 
           <div className="anime-featured__actions">
 
-            <a
-              href={`/anime/${featuredAnime.id}`}
+            <Link
+              to={`/anime/${featuredAnime.slug}`}
               className="anime-featured__primary"
             >
               ورود به داستان
               <span>←</span>
-            </a>
+            </Link>
 
-            <a
-              href={`/anime/${featuredAnime.id}`}
+            <Link
+              to={`/anime/${featuredAnime.slug}`}
               className="anime-featured__secondary"
             >
               جزئیات بیشتر
-            </a>
+            </Link>
 
           </div>
 
@@ -172,8 +129,6 @@ function Anime() {
         <div className="anime-featured__vertical-text">
           ANIME
         </div>
-
-       
 
       </div>
 
@@ -192,30 +147,30 @@ function Anime() {
             </h3>
           </div>
 
-          <a
-            href="/anime"
+          <Link
+            to="/anime"
             className="anime-row__link"
           >
             مشاهده همه
             <span>←</span>
-          </a>
+          </Link>
 
         </div>
 
         <div className="anime-row__scroll">
 
-          {animeList.slice(1).map((anime) => (
-            <a
-              href={`/anime/${anime.id}`}
+          {otherAnime.map((item) => (
+            <Link
+              to={`/anime/${item.slug}`}
               className="anime-card"
-              key={anime.id}
+              key={item.id}
             >
 
               <div className="anime-card__poster">
 
                 <img
-                  src={anime.poster}
-                  alt={anime.title}
+                  src={item.poster}
+                  alt={item.title}
                 />
 
                 <div className="anime-card__overlay">
@@ -225,11 +180,11 @@ function Anime() {
                 </div>
 
                 <div className="anime-card__rating">
-                  ★ {anime.rating}
+                  ★ {item.rating}
                 </div>
 
                 <div className="anime-card__jp">
-                  {anime.japaneseTitle}
+                  {item.japaneseTitle}
                 </div>
 
               </div>
@@ -237,20 +192,20 @@ function Anime() {
               <div className="anime-card__info">
 
                 <span>
-                  {anime.year}
+                  {item.year}
                 </span>
 
                 <h4>
-                  {anime.title}
+                  {item.title}
                 </h4>
 
                 <p>
-                  {anime.persianTitle}
+                  {item.persianTitle}
                 </p>
 
               </div>
 
-            </a>
+            </Link>
           ))}
 
         </div>
@@ -259,8 +214,8 @@ function Anime() {
       {/* WORLD CTA */}
       <div className="anime-section__bottom">
 
-        <a
-          href="/anime"
+        <Link
+          to="/anime"
           className="anime-world-button"
         >
 
@@ -272,7 +227,7 @@ function Anime() {
             ←
           </strong>
 
-        </a>
+        </Link>
 
       </div>
 

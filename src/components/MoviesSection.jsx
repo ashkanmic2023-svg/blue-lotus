@@ -1,65 +1,14 @@
 import { Link } from "react-router-dom";
+import {
+  movies,
+  getFeaturedMovie,
+  getOtherMovies,
+} from "../data/movies";
 import "./MoviesSection.css";
 
-const movies = [
-  {
-    id: 1,
-    title: "Interstellar",
-    persianTitle: "میان‌ستاره‌ای",
-    year: "2014",
-    genre: "Sci-Fi · Drama",
-    rating: "8.7",
-    description:
-      "سفری فراتر از زمان و فضا؛ روایتی درباره عشق، بقا و تلاش انسان برای پیدا کردن خانه‌ای تازه در میان ستارگان.",
-    poster:
-      "https://image.tmdb.org/t/p/w780/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Inception",
-    persianTitle: "تلقین",
-    year: "2010",
-    genre: "Sci-Fi · Thriller",
-    rating: "8.8",
-    poster:
-      "https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
-  },
-  {
-    id: 3,
-    title: "The Dark Knight",
-    persianTitle: "شوالیه تاریکی",
-    year: "2008",
-    genre: "Action · Crime",
-    rating: "9.0",
-    poster:
-      "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-  },
-  {
-    id: 4,
-    title: "Blade Runner 2049",
-    persianTitle: "بلید رانر ۲۰۴۹",
-    year: "2017",
-    genre: "Sci-Fi · Drama",
-    rating: "8.1",
-    poster:
-      "https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
-  },
-  {
-    id: 5,
-    title: "Dune",
-    persianTitle: "تلماسه",
-    year: "2021",
-    genre: "Sci-Fi · Adventure",
-    rating: "8.0",
-    poster:
-      "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",
-  },
-];
-
 function MoviesSection() {
-  const featuredMovie = movies.find((movie) => movie.featured);
-  const otherMovies = movies.filter((movie) => !movie.featured);
+  const featuredMovie = getFeaturedMovie();
+  const otherMovies = getOtherMovies();
 
   return (
     <section className="movies-section" id="movies">
@@ -111,7 +60,7 @@ function MoviesSection() {
           <div className="movies-featured__poster-glow" />
 
           <img
-            src={featuredMovie.poster}
+            src={featuredMovie.backdrop}
             alt={featuredMovie.title}
             className="movies-featured__poster"
           />

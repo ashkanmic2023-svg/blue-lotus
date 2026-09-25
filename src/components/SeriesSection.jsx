@@ -1,52 +1,13 @@
+import { Link } from "react-router-dom";
+import {
+  getFeaturedSeries,
+  getOtherSeries,
+} from "../data/series";
 import "./SeriesSection.css";
 
-const series = [
-  {
-    id: 1,
-    title: "Dark",
-    persianTitle: "دارک",
-    year: "2017",
-    rating: "8.7",
-    genre: "Mystery · Sci-Fi",
-    poster:
-      "https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Breaking Bad",
-    persianTitle: "بریکینگ بد",
-    year: "2008",
-    rating: "9.5",
-    genre: "Crime · Drama",
-    poster:
-      "https://image.tmdb.org/t/p/w500/ztkUQFLlC19CCMYHW9o1zWhJRN2.jpg",
-  },
-  {
-    id: 3,
-    title: "Stranger Things",
-    persianTitle: "چیزهای عجیب",
-    year: "2016",
-    rating: "8.6",
-    genre: "Drama · Fantasy",
-    poster:
-      "https://image.tmdb.org/t/p/w500/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
-  },
-  {
-    id: 4,
-    title: "The Last of Us",
-    persianTitle: "آخرین بازمانده از ما",
-    year: "2023",
-    rating: "8.7",
-    genre: "Drama · Adventure",
-    poster:
-      "https://image.tmdb.org/t/p/w500/dmo6TYuuJgaYinXBPjrgGfmsB5C.jpg",
-  },
-];
-
 function SeriesSection() {
-  const featuredSeries = series.find((item) => item.featured);
-  const otherSeries = series.filter((item) => !item.featured);
+  const featuredSeries = getFeaturedSeries();
+  const otherSeries = getOtherSeries();
 
   return (
     <section className="series-section" id="series">
@@ -65,13 +26,13 @@ function SeriesSection() {
           </h2>
         </div>
 
-        <a
-          href="/series"
+        <Link
+          to="/series"
           className="series-section__all-link"
         >
           ورود به دنیای سریال
           <span>←</span>
-        </a>
+        </Link>
 
       </div>
 
@@ -141,28 +102,26 @@ function SeriesSection() {
           </div>
 
           <p className="series-featured__description">
-            شهری که رازهایش در تاریکی پنهان شده‌اند؛ داستانی درباره
-            خانواده، زمان و زنجیره‌ای از اتفاقات که نسل‌ها را به هم
-            گره می‌زند.
+            {featuredSeries.description}
           </p>
 
 
           <div className="series-featured__actions">
 
-            <a
-              href="/series/dark"
+            <Link
+              to={`/series/${featuredSeries.slug}`}
               className="series-featured__primary-button"
             >
               ورود به داستان
               <span>←</span>
-            </a>
+            </Link>
 
-            <a
-              href="/series/dark"
+            <Link
+              to={`/series/${featuredSeries.slug}`}
               className="series-featured__secondary-button"
             >
               جزئیات بیشتر
-            </a>
+            </Link>
 
           </div>
 
@@ -184,10 +143,10 @@ function SeriesSection() {
             </h3>
           </div>
 
-          <a href="/series">
+          <Link to="/series">
             مشاهده همه
             <span>←</span>
-          </a>
+          </Link>
 
         </div>
 
@@ -195,8 +154,8 @@ function SeriesSection() {
         <div className="series-row">
 
           {otherSeries.map((item) => (
-            <a
-              href={`/series/${item.id}`}
+            <Link
+              to={`/series/${item.slug}`}
               className="series-card"
               key={item.id}
             >
@@ -227,7 +186,7 @@ function SeriesSection() {
 
               </div>
 
-            </a>
+            </Link>
           ))}
 
         </div>
