@@ -175,3 +175,50 @@
   color: #60758b;
   font-size: 12px;
 }
+/* =========================
+   LOGO HARD LIMIT
+========================= */
+
+.logo {
+  max-width: 220px;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  width: 46px !important;
+  height: 46px !important;
+  max-width: 46px !important;
+  max-height: 46px !important;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.logo-mark img {
+  width: 38px !important;
+  height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-text {
+  max-width: 160px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .logo-mark {
+    width: 38px !important;
+    height: 38px !important;
+    max-width: 38px !important;
+    max-height: 38px !important;
+  }
+
+  .logo-mark img {
+    width: 32px !important;
+    height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+  }
+}
